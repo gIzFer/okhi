@@ -1,0 +1,3 @@
+[submodule "web/xkeyboard-config"]
+	path = web/xkeyboard-config
+	url = https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config.git

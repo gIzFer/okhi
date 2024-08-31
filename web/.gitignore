@@ -1,0 +1,6 @@
+#ignore layouts
+data/*.*.js
+data/layoutsDescs.js
+
+#ignore keysymdef.h as its sourced with a wget
+keysymdef.h

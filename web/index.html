@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>okhi - Open Keylogger Hardware Implant</title>
+		<link rel="stylesheet" href="index.css">
+		<script type="text/javascript" src="data/keyMap.js"></script>
+		<script type="text/javascript" src="data/layoutsDescs.js"></script>
+
+		<script>var layouts = {};</script>
+		<script type="text/javascript" src="data/es.basic.js"></script>
+		<script type="text/javascript" src="data/us.basic.js"></script>
+		<script type="text/javascript" src="data/us.intl.js"></script>
+		<script type="text/javascript" src="codesParser.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>okhi - Open Keylogger Hardware Implant by Dreg</h1>
+				<h2><a href="https://www.rootkit.es/">rootkit.es</a> - <a href="https://github.com/therealdreg/okhi/">GitHub</a></h2>
+				<h3 id="fwversion"></h3>
+			</div>
+			<form>
+				<label for="keyboardLayout">KEYBOARD LAYOUT</label>
+				<select id="keyboardLayout">
+  					<option value="none" selected>Choose</option>
+				</select>
+
+				<!--<label for="keyboardLayout">KEYBOARD LAYOUT</label>
+				<select id="keyboardLayout">
+  					<option value="none" selected>Choose</option>
+				</select>
+
+				label for="keyboardModel">KEYBOARD MODEL</label>
+				<select id="keyboardModel">
+  					<option value="none" selected>Choose</option>
+				</select-->
+        <button id="processBufferButton" type="button">ProcessBuffer</button>
+				<label for="hexData">KEYS</label>
+				<textarea id="hexData" rows="10" readonly></textarea>
+			</form>
+			<form>
+				<label for="bufferData">PS2 DATA</label>
+				<textarea id="bufferData" rows="10" readonly></textarea>
+			</form>
+		</div>
+	</body>
+
+</html>
