@@ -62,7 +62,7 @@
         <div class="header">
             <h1>okhi - Open Keylogger Hardware Implant by Dreg</h1>
             <h2><a href="https://www.rootkit.es/">rootkit.es</a> - <a href="https://github.com/therealdreg/okhi/">GitHub</a></h2>
-			<h3>v3</h3>
+			<h3 id="fwversion"></h3>
         </div>
         <form>  
 			<label for="keyboardType">KEYBOARD LANG</label>
@@ -88,6 +88,24 @@
     </div>
     
     <script>
+		document.addEventListener("DOMContentLoaded", function() {
+			function getFirmVersion() {
+				fetch('/ver')
+					.then(response => response.text()) 
+					.then(version => {
+						document.getElementById('fwversion').textContent = "Firmware v"
+						document.getElementById('fwversion').textContent += version;
+					})
+					.catch(error => {
+						console.error('Error al obtener la versión, reintentando en 4 segundos...', error);
+						setTimeout(obtenerVersion, 4000);
+					});
+			}
+
+			getFirmVersion();
+		});
+
+
         class RemoteKeyboardTracker {
             constructor() {
                 this.keys = {};
@@ -186,7 +204,7 @@
                 console.log("Esp Data received:", data); // Debugging
                 let bufferData = document.getElementById('EspbufferData');
                 if (bufferData && data.trim() !== '') {
-                    bufferData.value = data;
+                    bufferData.value = data + '\n' + bufferData.value;
                 }
             })
             .catch(error => {
@@ -201,7 +219,7 @@
                 console.log("Rp Data received:", data); // Debugging
                 let bufferData = document.getElementById('RpbufferData');
                 if (bufferData && data.trim() !== '') {
-                    bufferData.value = data;
+                    bufferData.value = data + '\n' + bufferData.value;
                 }
             })
             .catch(error => {

@@ -296,9 +296,41 @@ Note: I modified the original usb-sniffer-lite project by Alex Taradov build pro
 
 # Developers web
 
-The web is located in webps2\index.html for PS2 firmware and webusb\index.html for USB firmware. You can modify the web as you want, adding more keyboard layouts, improving keyboard protocol parsing (javascript)... 
+The web is located in webps2\index.html for PS2 firmware and webusb\index.html for USB firmware. You can modify the web as you want, adding more keyboard layouts, improving keyboard protocol parsing (javascript)...
+
+Installing node.js on Windows
+```
+https://github.com/coreybutler/nvm-windows
+```
+
+Open cmd
+
+```
+nvm.exe install latest
+```
+
+Execute "nvm use" with the version installed, Example
+```
+nvm.exe use 22.7.0
+```
+
+Check node version
+```
+node.exe -v
+v22.7.0
+```
+
+Install deps
+
+```
+npm.exe install html-minifier --no-audit
+```
 
 Just modify the index.html, run node.js script "webps2\node.js" or "webusb\node.js" and compile ESP firmware again.
+
+```
+node.exe node.js
+```
 
 This script will generate a new "web buffer data" for ESP firmware, also it reduces the size of the web (minify).
 
